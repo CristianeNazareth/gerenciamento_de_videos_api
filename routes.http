@@ -1,0 +1,26 @@
+
+POST http://localhost:3333/videos
+Content-Type: application/json
+
+{
+  "name": "Video 02",
+  "videoUrl": "lskdefkgdfa",
+  "duration": 108
+
+}
+
+###
+
+GET  http://localhost:3333/videos
+
+###
+
+PUT  http://localhost:3333/videos/119fb700-64e2-4bb4-8c11-307d588764f6
+Content-Type: application/json
+
+{
+  "name": "Video 10",
+  "videoUrl": "lskklkjihkllkçlkçlkçfa",
+  "duration": 106
+
+}
