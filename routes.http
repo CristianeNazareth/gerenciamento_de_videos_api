@@ -2,25 +2,38 @@
 POST http://localhost:3333/videos
 Content-Type: application/json
 
-{
-  "name": "Video 02",
-  "videoUrl": "lskdefkgdfa",
-  "duration": 108
 
+{
+  "title": "Video 11",
+  "url": "nazaretho",
+  "duration": "111"
 }
 
 ###
 
-GET  http://localhost:3333/videos
+GET http://localhost:3333/videos
+
 
 ###
 
-PUT  http://localhost:3333/videos/119fb700-64e2-4bb4-8c11-307d588764f6
+PUT  http://localhost:3333/videos/1725581805284
 Content-Type: application/json
 
-{
-  "name": "Video 10",
-  "videoUrl": "lskklkjihkllkçlkçlkçfa",
-  "duration": 106
 
+{
+  "title": "Video 10",
+  "url": "lllfavaava",
+  "duration": "110"
+}
+
+###
+
+DELETE http://localhost:3333/videos/1725581805284
+Content-Type: application/json
+
+
+{
+  "title": "Video 05",
+  "url": "dhjhgfhjfaa",
+  "duration": "105"
 }
