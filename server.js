@@ -1,66 +1,70 @@
-import { fastify } from 'fastify';
-import { DatabaseMemory } from './database-memory.js';
-// import { title } from 'process';
-// import { request } from 'http';
+import { createServer } from 'http';
+
+import express from 'express';
+import pool from './db/db.js';
+
+const app = express();
+const port = 3333;
+
+app.use(express.json());
+
+const videos = []
 
 
-const server = fastify();
+app.post('/videos', (req, res) => {
 
-const database = new DatabaseMemory()
-
-
-server.post('/videos', async (request, reply) => {
-
-  const { name, videoUrl, duration } = request.body
-
-  database.create({
-    name: name,
-    videoUrl: videoUrl,
-    duration: duration
-  })
-  // const { videoUrl } = request.body;
-
-    console.log(database.list())
-    return reply.status(201)
+  const { title, url, duration } = req.body;
+  // res.send('Post concluido')
+  const id = Date.now() + Math.floor(Math.random() * 1000);
 
 
-try {
 
-    reply.code(201).send({message: 'Video adicionado com sucesso', videoUrl});
-  } catch (err) {
-    reply.code(500).send({error: 'Erro ao adicionar o video'})
-  }
-  console.log(database.list())
 
-return
+  const newVideo = { id, title, url, duration };
+  videos.push(newVideo)
+  res.json(videos);
 
 });
 
-server.get('/videos', () => {
-  const videos = database.list()
-  console.log(videos)
-  return videos
-})
 
-server.put('/videos/:id', (request, reply) => {
-  const videoId = request.params.id
-  const { name, videoUrl, duration } = request.body
+app.get('/videos', (req, res) => {
+  // res.send('servidor rodando')
+  res.json(videos)
+});
 
-  database.update(videoId, {
-    name: name,
-    videoUrl: videoUrl,
-    duration: duration
-  })
 
-  return reply.status(204).send()
-})
+app.put('/videos/:id', (req, res) => {
+  const { id } = req.params;
 
-server.delete('/videos/:id', () => {
-  return 'deletado'
+  const { title, url, duration } = req.body;
+
+  const video = videos.find(v => v.id === parseInt(id));
+  if(!video) {
+    return res.status(404).json({message: 'Video não encontrado'});
+  }
+  res.json(video)
 })
 
 
-server.listen({
-  port: 3333,
+app.delete('/videos/:id', (req, res) => {
+  const { id } = req.params;
 
+  const { title, url, duration } = req.body;
+  const video = videos.find(v => v.id === parseInt(id));
+  if(!video) {
+    return res.status(404).json({message: 'Video não encontrado'});
+  }
+
+  videos.splice(id, 1)
+  res.status(204).send();
 })
+
+
+
+
+
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
+
+
