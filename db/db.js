@@ -2,8 +2,6 @@
 import pkg from 'pg';
 const { Pool } = pkg;
 
-// import { Pool } from 'pg';
-
 const pool = new Pool({
   user: 'nazareth',
   host: 'localhost',

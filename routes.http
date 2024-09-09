@@ -4,9 +4,9 @@ Content-Type: application/json
 
 
 {
-  "title": "Video 2020",
-  "url": "criszaretdgfdo",
-  "duration": "11222"
+  "title": "Video 2540",
+  "url": "cdoaspsddse",
+  "duration": "5725"
 }
 
 ###
@@ -16,24 +16,24 @@ GET http://localhost:3333/videos
 
 ###
 
-PUT  http://localhost:3333/videos/1725747738923
+PUT  http://localhost:3333/videos/1725752478987
 Content-Type: application/json
 
 
 {
-  "title": "Video 125",
-  "url": "lllfadnaava",
-  "duration": "1225"
+  "title": "Video 1255",
+  "url": "lllnaavab",
+  "duration": "257"
 }
 
 ###
 
-DELETE http://localhost:3333/videos/1725747738923
+DELETE http://localhost:3333/videos/1725752478987
 Content-Type: application/json
 
 
-{
-  "title": "Video 05",
-  "url": "dhjhgfhjfaa",
-  "duration": "105"
-}
+# {
+#   "title": "Video 05",
+#   "url": "dhjhgfhjfaa",
+#   "duration": "105"
+# }

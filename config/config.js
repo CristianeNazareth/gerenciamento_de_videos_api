@@ -1,4 +1,4 @@
-// config.js
+
 export const dbConfig = {
   user: 'cristiane24',
   host: '127.0.0.1',

@@ -1,5 +1,8 @@
 import pool from './db/db.js'
 
+// alterar a tabela no banco de dados:
+// ALTER TABLE videos_tb
+// ALTER COLUMN id TYPE BIGINT;
 
 const createTableVideos = `
     CREATE TABLE IF NOT EXISTS videos_tb (
@@ -12,7 +15,7 @@ const createTableVideos = `
     );
   `;
 
-async function  createTable() {
+async function createTable() {
   try {
     const res = await pool.query(createTableVideos);
     console.log('Tabela criada!');
@@ -26,3 +29,7 @@ async function  createTable() {
 
 
 createTable();
+
+
+
+
