@@ -17,6 +17,7 @@ pool.connect((err, client, release) => {
     return console.error('Erro ao fazer a conexão:', err.stack);
   }
   console.log('Conexão concluído');
+
   release();
 });
 
