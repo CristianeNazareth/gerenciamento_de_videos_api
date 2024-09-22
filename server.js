@@ -1,11 +1,11 @@
-import { createServer } from "http";
-
 import express from "express";
 import pool from "./db/db.js";
+import cors from "cors";
 
 const app = express();
 const port = 3333;
 
+app.use(cors());
 app.use(express.json());
 
 // let videos = []
@@ -78,6 +78,7 @@ app.delete("/videos/:id", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

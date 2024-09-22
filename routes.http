@@ -4,9 +4,9 @@ Content-Type: application/json
 
 
 {
-  "title": "Video 2540",
-  "url": "cdoaspsddse",
-  "duration": "5725"
+  "title": "Video 2542",
+  "url": "cdoase",
+  "duration": "5728"
 }
 
 ###
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3333/videos/1725752478987
+DELETE http://localhost:3333/videos/1726006754609
 Content-Type: application/json
 
 
