@@ -5,10 +5,15 @@ import cors from "cors";
 const app = express();
 const port = 3333;
 
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+  origin: 'https://gerenciamento-de-videos-git-80b0b1-cristianenazareths-projects.vercel.app'
+}));
+
+
 app.use(express.json());
 
-// let videos = []
 
 app.post("/videos", async (req, res) => {
   const { title, url, duration } = req.body;
