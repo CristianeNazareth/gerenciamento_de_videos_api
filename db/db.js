@@ -1,6 +1,6 @@
 
-// import pkg from 'pg';
-// const { Pool } = pkg;
+import pkg from 'pg';
+const { Pool } = pkg;
 
 // const pool = new Pool({
 //   user: 'nazareth',
@@ -49,7 +49,7 @@
 
 
 
-import { Pool } from 'pg';
+// import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
 // Carregar variáveis de ambiente do .env
