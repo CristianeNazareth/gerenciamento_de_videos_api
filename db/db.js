@@ -52,13 +52,13 @@ const { Pool } = pkg;
 // import { Pool } from 'pg';
 import dotenv from 'dotenv';
 
-// Carregar variáveis de ambiente do .env
+
 dotenv.config();
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || 'postgresql://nazareth:241087@localhost:5432/videos_db',
   ssl: {
-    rejectUnauthorized: false // Isso pode ser necessário para conexões seguras
+    rejectUnauthorized: false
   }
 });
 
